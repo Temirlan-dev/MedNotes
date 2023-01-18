@@ -10,66 +10,87 @@ import FSCalendar
 
 class NotesViewController: UIViewController{
     
-    fileprivate weak var calendar: FSCalendar!
-    var calendarHeightConstraint: NSLayoutConstraint!
-    var button = UIButton()
+    var calendarHeightConstraint : NSLayoutConstraint!
+    
+    private var calendar: FSCalendar! = {
+        let calendar = FSCalendar()
+        calendar.translatesAutoresizingMaskIntoConstraints = false
+        return calendar
+    }()
+    
+    private var button : UIButton = {
+        let buttonStyle = UIButton()
+        buttonStyle.setTitle("Open calendar", for: .normal)
+        buttonStyle.setTitleColor(.black, for: .normal)
+        buttonStyle.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 15)
+        buttonStyle.translatesAutoresizingMaskIntoConstraints = false
+        return buttonStyle
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         title = "MedNotes"
-        setupButton()
-        setupConstraintsForCalendar()
-        setupConstraintsForButton()
+        
+        calendar.scope = .week
+        calendar.delegate = self
+        calendar.dataSource = self
+        
+        setConstraintsCalendar()
+        setConstraintsButton()
         button.addTarget(self, action: #selector(showHideButtonTapped), for: .touchUpInside)
     }
     
-    func setupButton() {
-        button.setTitle("Open calendar", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Avenir Next Demi Bold", size: 16)
-    }
-    
     @objc func showHideButtonTapped() {
-        print("click")
+        
+        if calendar.scope == .week {
+            calendar.setScope(.month, animated: true)
+            button.setTitle("Close calendar", for: .normal)
+        } else {
+            calendar.setScope(.week, animated: true)
+            button.setTitle("Open calendar", for: .normal)
+        }
     }
 }
+
 
 // MARK: SetupCalendarAndConstraints
 
 extension NotesViewController {
     
-    func setupConstraintsForCalendar() {
-        
-        let calendar = FSCalendar()
-        calendar.dataSource = self
-        calendar.delegate = self
-        calendar.translatesAutoresizingMaskIntoConstraints = false
-        calendar.scope = .month
-        self.calendar = calendar
+    func setConstraintsCalendar () {
         view.addSubview(calendar)
+        calendarHeightConstraint = NSLayoutConstraint(item: calendar!, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 250)
+        calendar.addConstraint(calendarHeightConstraint )
         
-        calendar.topAnchor.constraint(equalTo: view.topAnchor, constant: 80).isActive = true
-        calendar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
-        calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
-        calendar.heightAnchor.constraint(equalToConstant: 300).isActive = true
+        NSLayoutConstraint.activate([
+            calendar.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
+            calendar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0),
+            calendar.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0),
+        ])
     }
     
-        func setupConstraintsForButton() {
+    func setConstraintsButton () {
         view.addSubview(button)
-//        button.frame = CGRect(x: 0, y: 0, width: 170, height: 30)
-        button.topAnchor.constraint(equalTo: calendar.topAnchor, constant: 0).isActive = true
-        button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15).isActive = true
-        button.widthAnchor.constraint(equalToConstant: 100).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        NSLayoutConstraint.activate([
+            button.topAnchor.constraint(equalTo: calendar.bottomAnchor, constant: 0),
+            button.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+            button.widthAnchor.constraint(equalToConstant: 150),
+            button.heightAnchor.constraint(equalToConstant: 20),
+        ])
     }
 }
 
 extension NotesViewController: FSCalendarDelegate, FSCalendarDataSource {
     
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
+        calendarHeightConstraint.constant = bounds.height
         view.layoutIfNeeded()
+    }
+    
+    func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
+        print(date)
     }
 }
 
