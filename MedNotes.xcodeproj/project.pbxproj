@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2206F0E2297F85D200A2AF0E /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206F0E1297F85D200A2AF0E /* ReminderTableViewCell.swift */; };
 		2206F0E4297F860C00A2AF0E /* HeaderAddReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206F0E3297F860C00A2AF0E /* HeaderAddReminderTableViewCell.swift */; };
+		2206F0E6297F86BA00A2AF0E /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2206F0E5297F86BA00A2AF0E /* AddNoteViewController.swift */; };
 		2208AE3429745757009F3ED9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE3329745757009F3ED9 /* AppDelegate.swift */; };
 		2208AE3629745757009F3ED9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE3529745757009F3ED9 /* SceneDelegate.swift */; };
 		2208AE3829745757009F3ED9 /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE3729745757009F3ED9 /* MainTabbarController.swift */; };
@@ -28,6 +29,7 @@
 		0B6999ABFE4FC325266F7000 /* Pods_MedNotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MedNotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2206F0E1297F85D200A2AF0E /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		2206F0E3297F860C00A2AF0E /* HeaderAddReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAddReminderTableViewCell.swift; sourceTree = "<group>"; };
+		2206F0E5297F86BA00A2AF0E /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		2208AE3029745757009F3ED9 /* MedNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MedNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2208AE3329745757009F3ED9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2208AE3529745757009F3ED9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				2208AE4C297463D4009F3ED9 /* NotesViewController.swift */,
+				2206F0E5297F86BA00A2AF0E /* AddNoteViewController.swift */,
 			);
 			path = Notes;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				2206F0E4297F860C00A2AF0E /* HeaderAddReminderTableViewCell.swift in Sources */,
 				2208AE4D297463D4009F3ED9 /* NotesViewController.swift in Sources */,
 				2206F0E2297F85D200A2AF0E /* ReminderTableViewCell.swift in Sources */,
+				2206F0E6297F86BA00A2AF0E /* AddNoteViewController.swift in Sources */,
 				2208AE3429745757009F3ED9 /* AppDelegate.swift in Sources */,
 				2208AE3629745757009F3ED9 /* SceneDelegate.swift in Sources */,
 				22A93AE5297924B8002D6EBA /* AddReminderTableViewCell.swift in Sources */,
