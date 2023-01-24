@@ -15,6 +15,9 @@
 		2208AE4B2974637F009F3ED9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE4A2974637F009F3ED9 /* NotesViewController.swift */; };
 		2208AE4D297463D4009F3ED9 /* TasksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE4C297463D4009F3ED9 /* TasksViewController.swift */; };
 		220D573D29784592008963EE /* NoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220D573C29784592008963EE /* NoteTableViewCell.swift */; };
+		227A57D3297BDF50004E5E44 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D2297BDF50004E5E44 /* AlertDate.swift */; };
+		227A57D5297BEF41004E5E44 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D4297BEF41004E5E44 /* AlertTime.swift */; };
+		227A57D7297C2F45004E5E44 /* AlertNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D6297C2F45004E5E44 /* AlertNote.swift */; };
 		228B92E029799E210013E070 /* HeaderAddNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228B92DF29799E210013E070 /* HeaderAddNoteTableViewCell.swift */; };
 		22A93AE229791F68002D6EBA /* AddNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A93AE129791F68002D6EBA /* AddNoteViewController.swift */; };
 		22A93AE5297924B8002D6EBA /* AddNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A93AE4297924B8002D6EBA /* AddNoteTableViewCell.swift */; };
@@ -33,6 +36,9 @@
 		2208AE4A2974637F009F3ED9 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
 		2208AE4C297463D4009F3ED9 /* TasksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasksViewController.swift; sourceTree = "<group>"; };
 		220D573C29784592008963EE /* NoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableViewCell.swift; sourceTree = "<group>"; };
+		227A57D2297BDF50004E5E44 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
+		227A57D4297BEF41004E5E44 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
+		227A57D6297C2F45004E5E44 /* AlertNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertNote.swift; sourceTree = "<group>"; };
 		228B92DF29799E210013E070 /* HeaderAddNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderAddNoteTableViewCell.swift; sourceTree = "<group>"; };
 		22A93AE129791F68002D6EBA /* AddNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteViewController.swift; sourceTree = "<group>"; };
 		22A93AE4297924B8002D6EBA /* AddNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNoteTableViewCell.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 		220D573A29784557008963EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				227A57D1297BDEDE004E5E44 /* Extension */,
 				220D573B2978455F008963EE /* Cell */,
 			);
 			path = Model;
@@ -141,6 +148,16 @@
 				22A93AE129791F68002D6EBA /* AddNoteViewController.swift */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		227A57D1297BDEDE004E5E44 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				227A57D2297BDF50004E5E44 /* AlertDate.swift */,
+				227A57D4297BEF41004E5E44 /* AlertTime.swift */,
+				227A57D6297C2F45004E5E44 /* AlertNote.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		22A93AE329792413002D6EBA /* Note */ = {
@@ -286,8 +303,11 @@
 			files = (
 				228B92E029799E210013E070 /* HeaderAddNoteTableViewCell.swift in Sources */,
 				22A93AE229791F68002D6EBA /* AddNoteViewController.swift in Sources */,
+				227A57D5297BEF41004E5E44 /* AlertTime.swift in Sources */,
 				2208AE4B2974637F009F3ED9 /* NotesViewController.swift in Sources */,
+				227A57D7297C2F45004E5E44 /* AlertNote.swift in Sources */,
 				2208AE3829745757009F3ED9 /* MainTabbarController.swift in Sources */,
+				227A57D3297BDF50004E5E44 /* AlertDate.swift in Sources */,
 				2208AE4D297463D4009F3ED9 /* TasksViewController.swift in Sources */,
 				2208AE3429745757009F3ED9 /* AppDelegate.swift in Sources */,
 				2208AE3629745757009F3ED9 /* SceneDelegate.swift in Sources */,
