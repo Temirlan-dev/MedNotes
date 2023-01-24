@@ -7,10 +7,10 @@
 
 import UIKit
 
-class AddNoteTableViewCell: UITableViewCell {
+class AddReminderTableViewCell: UITableViewCell {
     
     static let identifier = "AddNoteTableViewCell"
-    let listDataForCell = [["Дата", "Время"], ["Лекарство", "Срок годности"], ["тест"],["Повтор"]]
+    let listDataForCell = [["Дата", "Время"], ["Лекарство", "Срок годности"], ["Прочая информация"],["Повтор"]]
     
     let backgroundViewCell: UIView = {
         let backgroundStyle = UIView()
@@ -80,7 +80,7 @@ class AddNoteTableViewCell: UITableViewCell {
     }
 }
 
-extension AddNoteTableViewCell {    
+extension AddReminderTableViewCell {    
     
     func setConstraintsLabel() {
         self.addSubview(backgroundViewCell)
