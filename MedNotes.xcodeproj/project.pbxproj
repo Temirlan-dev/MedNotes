@@ -17,6 +17,8 @@
 		2208AE4029745758009F3ED9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2208AE3E29745758009F3ED9 /* LaunchScreen.storyboard */; };
 		2208AE4B2974637F009F3ED9 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE4A2974637F009F3ED9 /* ReminderViewController.swift */; };
 		2208AE4D297463D4009F3ED9 /* NotesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2208AE4C297463D4009F3ED9 /* NotesViewController.swift */; };
+		224F5ED829817F1300EE54FE /* ReminderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5ED729817F1300EE54FE /* ReminderModel.swift */; };
+		224F5EDB2981817300EE54FE /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224F5EDA2981817300EE54FE /* RealmManager.swift */; };
 		227A57D3297BDF50004E5E44 /* AlertDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D2297BDF50004E5E44 /* AlertDate.swift */; };
 		227A57D5297BEF41004E5E44 /* AlertTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D4297BEF41004E5E44 /* AlertTime.swift */; };
 		227A57D7297C2F45004E5E44 /* AlertNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227A57D6297C2F45004E5E44 /* AlertNote.swift */; };
@@ -39,6 +41,8 @@
 		2208AE4129745758009F3ED9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2208AE4A2974637F009F3ED9 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		2208AE4C297463D4009F3ED9 /* NotesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesViewController.swift; sourceTree = "<group>"; };
+		224F5ED729817F1300EE54FE /* ReminderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderModel.swift; sourceTree = "<group>"; };
+		224F5EDA2981817300EE54FE /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		227A57D2297BDF50004E5E44 /* AlertDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDate.swift; sourceTree = "<group>"; };
 		227A57D4297BEF41004E5E44 /* AlertTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTime.swift; sourceTree = "<group>"; };
 		227A57D6297C2F45004E5E44 /* AlertNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertNote.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 				2208AE4729745A78009F3ED9 /* Application */,
 				2208AE4829745AAA009F3ED9 /* Controllers */,
 				220D573A29784557008963EE /* Model */,
+				224F5ED92981815000EE54FE /* Services */,
 				2208AE4929745AC4009F3ED9 /* Resources */,
 			);
 			path = MedNotes;
@@ -121,6 +126,7 @@
 		220D573A29784557008963EE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				224F5ED629817EF500EE54FE /* Realm */,
 				227A57D1297BDEDE004E5E44 /* Extension */,
 				220D573B2978455F008963EE /* Cell */,
 			);
@@ -133,6 +139,22 @@
 				22A93AE329792413002D6EBA /* Reminder */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		224F5ED629817EF500EE54FE /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				224F5ED729817F1300EE54FE /* ReminderModel.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		224F5ED92981815000EE54FE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				224F5EDA2981817300EE54FE /* RealmManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		227A57CF297BD458004E5E44 /* Notes */ = {
@@ -306,9 +328,11 @@
 			files = (
 				22A93AE229791F68002D6EBA /* AddReminderViewController.swift in Sources */,
 				227A57D5297BEF41004E5E44 /* AlertTime.swift in Sources */,
+				224F5EDB2981817300EE54FE /* RealmManager.swift in Sources */,
 				2208AE4B2974637F009F3ED9 /* ReminderViewController.swift in Sources */,
 				227A57D7297C2F45004E5E44 /* AlertNote.swift in Sources */,
 				2208AE3829745757009F3ED9 /* MainTabbarController.swift in Sources */,
+				224F5ED829817F1300EE54FE /* ReminderModel.swift in Sources */,
 				227A57D3297BDF50004E5E44 /* AlertDate.swift in Sources */,
 				2206F0E4297F860C00A2AF0E /* HeaderAddReminderTableViewCell.swift in Sources */,
 				2208AE4D297463D4009F3ED9 /* NotesViewController.swift in Sources */,
