@@ -50,12 +50,9 @@ class ReminderViewController: UIViewController{
     }
     
     @objc private func addButtonTapped() {
-        let addRemindViewController = AddReminderViewController()
-        
+        let addRemindViewController = AddReminderViewController()        
         let navigationViewController = UINavigationController(rootViewController: addRemindViewController)
         present(navigationViewController, animated: true)
-        
-//        navigationController?.pushViewController(addRemindViewController, animated: true)
     }
     
     @objc private func showHideButtonTapped() {

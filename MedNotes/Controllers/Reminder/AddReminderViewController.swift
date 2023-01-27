@@ -9,6 +9,8 @@ import UIKit
 
 class AddReminderViewController: UITableViewController {
     
+    private let reminderModel = ReminderModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,13 @@ class AddReminderViewController: UITableViewController {
         tableView.separatorStyle = .none
         tableView.register(AddReminderTableViewCell.self, forCellReuseIdentifier: AddReminderTableViewCell.identifier)
         tableView.register(HeaderAddReminderTableViewCell.self, forHeaderFooterViewReuseIdentifier: HeaderAddReminderTableViewCell.identifier)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveButtonTapped))
+    }
+    
+    @objc private func saveButtonTapped() {
+        RealmManager.shared.saveReminderModel(model: reminderModel)
+        
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,6 +55,7 @@ class AddReminderViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: AddReminderTableViewCell.identifier, for: indexPath) as! AddReminderTableViewCell
         cell.cellConfigure(indexPath: indexPath )
         cell.setListCell(indexPath: indexPath)
+        cell.selectProtocol = self
         return cell
     }
     
@@ -68,17 +78,35 @@ class AddReminderViewController: UITableViewController {
         let cell = tableView.cellForRow(at: indexPath) as! AddReminderTableViewCell
         
         switch indexPath {
-        case [0,0]: alertDate(label: cell.noteCellLabel) { (numberWeekday, date) in
-            print (numberWeekday, date)
+        case [0,0]:
+            alertDate(label: cell.noteCellLabel) {(numberWeekday, date) in
+                self.reminderModel.reminerDate = date
         }
-        case [0,1]: alertTime(label: cell.noteCellLabel) { (date) in
-            print (date)
+        case [0,1]:
+            alertTime(label: cell.noteCellLabel) {(time) in
+                self.reminderModel.reminerDate = time
         }
-        case [1,0]: alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите название лекарства")
-        case [1,1]: alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите срок годности")
-        case [2,0]: alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите прочую информацию")
+        case [1,0]:
+            alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите название лекарства"){ text in
+                self.reminderModel.medicament = text
+            }
+        case [1,1]:
+            alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите срок годности"){ text in
+                self.reminderModel.expirationDate = text
+            }
+        case [2,0]:
+            alertNote(label: cell.noteCellLabel, name: "Введите данные", placeholder: "Введите прочую информацию"){ text in
+                self.reminderModel.desc = text
+            }
         default:
             print("error")
         }
+    }
+}
+
+extension AddReminderViewController: RepeatProtocol {
+    
+    func selectRepeat(select: Bool) {
+        reminderModel.reminderRepeat = select
     }
 }

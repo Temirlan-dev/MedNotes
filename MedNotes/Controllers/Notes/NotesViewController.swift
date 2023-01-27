@@ -22,5 +22,4 @@ class NotesViewController: UIViewController {
         let addNoteViewController = AddNoteViewController()
         navigationController?.pushViewController(addNoteViewController, animated: true)
     }
-
 }

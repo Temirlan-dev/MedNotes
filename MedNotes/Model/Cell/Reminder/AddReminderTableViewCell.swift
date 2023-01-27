@@ -38,8 +38,9 @@ class AddReminderTableViewCell: UITableViewCell {
         dateSwitchStyle.onTintColor = .systemGreen
         dateSwitchStyle.translatesAutoresizingMaskIntoConstraints = false
         return dateSwitchStyle
-        
     }()
+    
+    weak var selectProtocol: RepeatProtocol?
      
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -72,11 +73,7 @@ class AddReminderTableViewCell: UITableViewCell {
     }
     
     @objc func switchChange(param: UISwitch) {
-        if param.isOn {
-            print("On")
-        } else {
-            print("Off")
-        }
+        selectProtocol?.selectRepeat(select: param.isOn)
     }
 }
 
@@ -107,4 +104,10 @@ extension AddReminderTableViewCell {
             dateSwitch.trailingAnchor.constraint(equalTo: backgroundViewCell.trailingAnchor, constant: -25),
         ])
     }
+}
+
+
+protocol RepeatProtocol: AnyObject {
+     
+    func selectRepeat (select: Bool)
 }

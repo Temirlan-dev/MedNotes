@@ -9,7 +9,7 @@ import UIKit
 
 extension UIViewController {
     
-    func alertNote(label: UILabel, name: String, placeholder: String) {        
+    func alertNote(label: UILabel, name: String, placeholder: String, completionHandler: @escaping(String) -> Void) {
         let alertNote = UIAlertController(title: name, message: nil, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -20,6 +20,7 @@ extension UIViewController {
                 print("null")
             } else {
                 label.text = text
+                completionHandler(text)
             }
         }
         
